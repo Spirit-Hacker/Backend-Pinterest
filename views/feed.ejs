@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+    <div class="w-full min-h-screen px-10 py-5">
+        <div class="cards flex flex-wrap gap-10">
+            <% postData.forEach((elem) => { %>
+                <div class="card w-32">
+                    <div class="w-full h-40 rounded-lg bg-red-600 overflow-hidden">
+                        <img class="w-full object-cover h-full" src="/images/uploads/<%= elem.image %>" alt="">
+                    </div>
+                    <h5 class="mt-2 text-xs font-semibold"><%= elem.title %></h5>
+                    <h3 class="text-xs opacity-50">@<%= elem.user.username %></h3>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+<% include ./partials/footer.ejs %>
